@@ -1,0 +1,74 @@
+body {
+    font-family: Bahnschrift;
+}
+#logo {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:125px;
+    height:110px;
+}
+
+#photo {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    width: 99.99%;
+    height: 190px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    background-color: #f1f1f1;
+    overflow: auto; 
+}
+
+li {
+    margin-bottom: 2px;
+    font-family: Calibri;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+  
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+  
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+#menu {
+    display: block;
+    width: 230px;
+    background-color: lightgreen;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-family: Bahnschrift;
+}
+
+.nav-menu{
+    display:inline-flex;
+}
+
+.footer{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.urci-banner{
+    height: 185px;
+}
