@@ -1,33 +1,39 @@
 from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy 
+from django.urls import reverse_lazy, reverse 
+from django.contrib import messages
 from . import forms
 from . import models
 # Create your views here.
 
-class AnnouncementListView(generic.ListView,LoginRequiredMixin):
+class AnnouncementListView(LoginRequiredMixin, generic.ListView):
     model = models.Announcement
 
-class AnnouncementDetailView(generic.DetailView, LoginRequiredMixin):
+class AnnouncementDetailView(LoginRequiredMixin, generic.DetailView ):
     model = models.Announcement
 
-class AnnouncementUpdateView(generic.UpdateView, LoginRequiredMixin):
-    model = models.Announcement
-    form_class = forms.AnnouncementForm
-
-class AnnouncementCreateView(generic.CreateView, LoginRequiredMixin):
+    def get_absolute_url(self):
+        return reverse('announcement:single', kwargs={'pk': self.pk})
+class AnnouncementUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = models.Announcement
     form_class = forms.AnnouncementForm
 
-class AnnouncementDeleteView(generic.DeleteView, LoginRequiredMixin):
+class AnnouncementCreateView(LoginRequiredMixin, generic.CreateView ):
     model = models.Announcement
     form_class = forms.AnnouncementForm
-    success_url = reverse_lazy('home')
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.filter(user_id=self.request.user.id)
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+
+class AnnouncementDeleteView(LoginRequiredMixin, generic.DeleteView ):
+    model = models.Announcement
+    
+    def get_success_url(self):
+        return reverse('home')
 
     def delete(self, *args, **kwargs):
         messages.success(self.request, "Post Deleted")

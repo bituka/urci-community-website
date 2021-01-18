@@ -130,10 +130,11 @@ li a:hover:not(.active) {
     font-size:1.2em;
     color:white;
     margin-bottom: 1em;
+    
 }
 
 .navbar-brand {
-    align-self: flex-start;
+    width: fit-content !important;
 }
 
 .navbar-nav a:hover {
@@ -153,3 +154,15 @@ li a:hover:not(.active) {
     margin-right:auto;
 }
 
+.announcement-date {
+    font-size: 1em;
+    color:rgb(201, 198, 198);
+}
+
+.announcement-card {
+    border-radius: 10%;
+}
+
+.card-header{
+    font-style: bold;
+}

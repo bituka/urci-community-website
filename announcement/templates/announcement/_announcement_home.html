@@ -1,0 +1,20 @@
+
+<div class="container">
+    <div class="card announcement-card" style="width: 18rem;">
+      <h5 class="card-header">Announcement</h5>
+      <div class="card-body">
+        <h5 class="card-title">{{object.title}}</h5>
+        <p class="card-text">{{object.text}}</p>
+        <span class="announcement-date">{{object.date}}</span>
+        {% if user.is_authenticated %}
+          <a href="{% url 'announcement:single' pk=object.pk %}" class="btn btn-info">Change</a>
+        {% endif %}
+  
+      </div>
+    </div>
+<br>
+
+
+    
+</div>
+    
