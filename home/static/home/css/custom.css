@@ -1,0 +1,168 @@
+body {
+    font-family: Bahnschrift;
+}
+
+#photo {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    width: 99.99%;
+    height: 190px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    background-color: #f1f1f1;
+    overflow: auto; 
+}
+
+li {
+    margin-bottom: 2px;
+    font-family: Calibri;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+  
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+  
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+#menu {
+    display: block;
+    width: 230px;
+    background-color: lightgreen;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-family: Bahnschrift;
+}
+
+.nav-menu{
+    display:inline-flex;
+}
+
+.footer{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/* JAMES */
+
+.back {
+    width: 80%;
+    height: auto;
+}
+
+.style_prevu_kit
+{
+    display:inline-block;
+    border:0;
+    width:196px;
+    height:210px;
+    position: relative;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);   
+
+}
+.style_prevu_kit:hover
+{
+    box-shadow: 0px 0px 150px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
+
+.row {
+    text-align:center;
+    margin-bottom:10%;
+}
+
+.dot {
+    height: 130px;
+    width: 130px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+.branding {
+    width: 30%;
+    height: 130%;
+
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #33658A;
+}
+
+.custom-navbar {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-size:1.2em;
+    color:white;
+    margin-bottom: 1em;
+    
+}
+
+.navbar-brand {
+    width: fit-content !important;
+}
+
+.navbar-nav a:hover {
+    background-color:#33658A;
+    color:white;
+    border: 10px solid #33658A;
+  }
+
+.navbar-nav a:active {
+    font-style: bold;
+}
+
+.cover {
+    height:auto;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.announcement-date {
+    font-size: 1em;
+    color:rgb(201, 198, 198);
+}
+
+.announcement-card {
+    border-radius: 10%;
+}
+
+.card-header{
+    font-style: bold;
+}
