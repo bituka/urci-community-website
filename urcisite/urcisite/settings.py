@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    # my apps
+    'announcement.apps.AnnouncementConfig',
+    'documents.apps.DocumentsConfig'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'urcisite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/urcifamily/urcisite/urcisite/templates'],
+        'DIRS': ['/home/urcifamily/urcisite/urcisite/templates/urcisite/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,8 +79,11 @@ WSGI_APPLICATION = 'urcisite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'urcifamily$urcifamily',
+        'USER': 'urcifamily',
+        'PASSWORD': 'urci2021',
+        'HOST': 'urcifamily.mysql.pythonanywhere-services.com',
     }
 }
 
@@ -132,3 +138,11 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+"django.core.context_processors.debug",
+"django.core.context_processors.i18n",
+"django.core.context_processors.media",
+"django.core.context_processors.static",
+"django.contrib.messages.context_processors.messages",
+"home.context_processor.remote_ip")

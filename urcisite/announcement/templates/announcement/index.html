@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block announcement %}
+
+{% if latest_announcement_list %}
+    <ul class="ul-content">
+    {% for announcement in latest_announcement_list %}
+    <li>   {{ announcement.announcement_text }} </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Announcement are available.</p>
+{% endif %}
+
+{% endblock %}

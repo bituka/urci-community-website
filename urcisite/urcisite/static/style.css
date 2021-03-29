@@ -24,7 +24,7 @@ ul {
     margin:0;
     padding:0;
     background-color: #f1f1f1;
-    overflow: auto; 
+    overflow: auto;
 }
 
 li {
@@ -38,12 +38,12 @@ li a {
     padding: 8px 16px;
     text-decoration: none;
 }
-  
+
 li a.active {
     background-color: #4CAF50;
     color: white;
 }
-  
+
 li a:hover:not(.active) {
     background-color: #555;
     color: white;
@@ -71,4 +71,23 @@ li a:hover:not(.active) {
 
 .urci-banner{
     height: 185px;
+}
+
+.ul-content{
+    list-style-type:square;
+    background:none;
+    list-style-position: inside;
+}
+
+.hr-top{
+border: 10px solid teal;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .footer {
+      display:none;
+  /*  position: fixed; */
+  }
 }

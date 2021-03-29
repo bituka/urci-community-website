@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang=”en”>
+ <head>
+ <meta charset=”utf-8">
+ <title>URCI | Home </title>
+ <meta name=”viewport” content=”width=device-width, initial-scale=1.0">
+ <meta name=”description” content=”A community site for URCI Las Piñas”>
+<meta name=”keywords” content=”urci, community, family, laspinas”>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="w3-container">
+    <img id='logo' src='{% static 'img/Urci-Logo.jpg' %}'>
+    <ul class="nav-menu">
+        <li><a href='/' target="_blank">Home</a></li>
+        <li><a href='/'>Board of Directors</a></li>
+    </ul>
+</div>
+<div class="w3-container w3-teal urci-banner">
+  <h1>Welcome URCI Family</h1>
+  <p></p>
+</div>
+
+<div class="w3-row-padding">
+  <div class="w3-third">
+    <h2>Announcements</h2>
+
+    {% block announcement %}Announcement List{% endblock %}
+
+  </div>
+
+  <div class="w3-third">
+    <h2>Documents</h2>
+    <a href="/document/">Clck here to vew the documents</a>
+  </div>
+
+  <div class="w3-third">
+    <h2></h2>
+    <p></p>
+    <p></p>
+  </div>
+</div>
+<div class="w3-container w3-teal footer">
+    <p>URCI Official Web Site</p>
+  </div>
+
+
+<!-- Vue.js -->
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-resource"></script>
+<script src="{% static 'custom.js' %}"></script>
+ <script>
+</script>
+</body>
+</html>

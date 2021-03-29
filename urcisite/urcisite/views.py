@@ -1,16 +1,16 @@
-from django.shortcuts import render
 
-#from .models import Article
-#from .models import Author
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
+from django.views import View
+from django.views import generic
+from django.views.generic.list import ListView
 
-def frontend(request):
-    """Vue.js will take care of everything else."""
-    """articles = Article.objects.all()
-    authors = Author.objects.all()
-    """
-    data = {
-        #'articles': articles,
-        #'authors': authors,
-    }
+from announcement.models import Announcement
 
-    return render(request, 'urcisite/index.html', data)
+class AnnouncementListView(generic.ListView):
+    template_name = 'urcisite/index.html'
+    context_object_name = 'latest_announcement_list'
+
+    def get_queryset(self):
+
+        return Announcement.objects.order_by('-pub_date')[:5]
